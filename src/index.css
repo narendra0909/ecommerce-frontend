@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+
+  --color-cream: #fff9f3;
+  --color-paper: #fffdf9;
+  --color-peach: #efaa82;
+  --color-peach-soft: #f9e1d1;
+  --color-sage: #86a965;
+  --color-brown: #775532;
+  --color-wine: #5a1632;
+  --color-wine-dark: #3f1025;
+  --color-gold: #bd852f;
+  --color-ink: #2f241f;
+  --color-muted: #796b62;
+  --color-line: #ead8ca;
+}
+
+body {
+  @apply bg-cream font-sans text-ink antialiased;
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[10px] font-semibold uppercase tracking-[2.2px] text-[#a26c34];
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3 text-[10px] font-semibold uppercase tracking-[1.4px] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-wine text-white hover:-translate-y-0.5 hover:bg-wine-dark focus-visible:ring-wine;
+  }
+  .btn-secondary {
+    @apply border border-brown/60 bg-transparent text-wine hover:-translate-y-0.5 hover:bg-peach-soft/50 focus-visible:ring-brown;
+  }
+  .btn-light {
+    @apply bg-white text-wine hover:-translate-y-0.5 focus-visible:ring-white;
+  }
+
+  .input {
+    @apply w-full rounded-sm border border-line bg-paper px-3 py-2.5 text-sm placeholder-stone-400 transition focus:border-wine focus:outline-none focus:ring-1 focus:ring-wine;
+  }
+  .label {
+    @apply mb-1 block text-xs font-medium uppercase tracking-wide text-brown;
+  }
+  .card {
+    @apply rounded-none border border-line bg-white shadow-[0_10px_30px_rgba(68,35,22,0.05)];
+  }
+}
